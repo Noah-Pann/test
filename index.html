@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silent Cat - Paw Steps</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Google -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Patrick+Hand&family=Quicksand&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="fixed-wrapper">
+  <div class="container">
+    <div class="footsteps">
+      <img src="1/paw 1.png" class="paw paw1" alt="Paw 1">
+      <img src="1/paw 2.png" class="paw paw2" alt="Paw 2">
+      <img src="1/paw 3.png" class="paw paw3" alt="Paw 3">
+      <img src="1/paw 4.png" class="paw paw4" alt="Paw 4">
+    </div>
+  </div>
+  <div class="intro-text">
+  <span id="typed-text"></span>
+</div>
+</div>
+<script>
+  const text = "If I were just a silent cat,";
+  const container = document.getElementById("typed-text");
+
+[...text].forEach((char, i) => {
+  if (char === " ") {
+    const space = document.createTextNode(" ");
+    container.appendChild(space);
+  } else {
+    const span = document.createElement("span");
+    span.textContent = char;
+    span.classList.add("fade-char");
+    span.style.animationDelay = `${i * 0.06}s`; // chỉnh tốc độ
+    container.appendChild(span);
+  }
+});
+
+</script>
+<section class="section2">
+  <img src="bg.png" alt="Story Background" class="bg-story" />
+  <img src="2/meo.png" class="cat-1" alt="Cat">
+<!-- Nhóm 1: Book 1 + Text -->
+<div class="group group1">
+  <img src="3/book1.png" class="book">
+  <img src="3/book1-text.png" class="text">
+</div>
+
+<!-- Nhóm 2: Book 2 + Text -->
+<div class="group group2">
+  <img src="3/book2.png" class="book">
+  <img src="3/book2-text.png" class="text book-text">
+  <img src="3/paper.png" class="paper">
+  <img src="3/paper-text.png" class="text paper-text">
+</div>
+<div class="group group3">
+  <img src="3/book3.png" class="book">
+</div>
+<!-- Nhóm Coffee: Cup + Coffee + Smoke -->
+<div class="group group-coffee">
+  <img src="3/cup.png" class="cup" alt="Cup">
+
+  <div class="coffee-mask">
+    <img src="3/coffee.png" class="coffee" alt="Coffee">
+    <div class="ring-glow"></div> <!-- vòng lớn -->
+    <div class="small-ring"></div> <!-- 🌟 vòng nhỏ -->
+  </div>
+
+  <img src="3/smoke.png" class="smoke" alt="Smoke">
+</div>
+<div class="group group-shadow">
+  <img src="4/shadow.png" class="shadow" alt="Shadow">
+</div>
+
+<div class="group group-aura">
+  <div class="aura"></div>
+</div>
+<!-- Nhóm nhân vật: body + 5 đầu -->
+<div class="group group-character">
+  <img src="5/body.png" class="body" alt="Body">
+
+  <!-- Nhóm đầu: chứa tất cả các trạng thái đầu -->
+  <div class="head-group">
+    <img src="5/head front.png" class="head head-front" alt="Head Front">
+    <img src="5/head left up.png" class="head head-left-up" alt="Head Left Up">
+    <img src="5/head left down.png" class="head head-left-down" alt="Head Left Down">
+    <img src="5/head right up.png" class="head head-right-up" alt="Head Right Up">
+    <img src="5/head right down.png" class="head head-right-down" alt="Head Right Down">
+  </div>
+  <img src="5/heart.png" class="heart" alt="Heart">
+</div>
+  <div class="ripple-trigger"></div>
+<!-- 4 vùng click điều hướng đầu -->
+<div class="head-trigger trigger-left-up"></div>
+<div class="head-trigger trigger-left-down"></div>
+<div class="head-trigger trigger-right-up"></div>
+<div class="head-trigger trigger-right-down"></div>
+
+<div class="group-cat6">
+ <div class="cat-particles"></div> <!-- sau lưng mèo -->
+  <img src="6/hand-6.png" class="hand-6" alt="Hand" />
+  <img src="6/cat-6.png" class="cat-6" alt="Cat" />
+</div>
+<!-- Group 7: Table + Boy + Cat -->
+<div class="group-boycat">
+  <img src="7/table-7.png" class="table-7" />
+
+<div class="boy-wrapper">
+  <img src="7/boy.png" class="boy-7" alt="Boy" />
+  <img src="7/shadow.png" class="boy-shadow-img" alt="Boy Shadow" />
+</div>
+
+
+  <img src="7/cat-walk.png" class="cat-walk-7" />
+  <img src="7/cat-lying.png" class="cat-lying-7" />
+  <div class="purr-waves">
+  <span class="wave"></span>
+  <span class="wave"></span>
+  <span class="wave"></span>
+</div>
+</div>
+
+<!-- Group 8: Cat và Black (riêng biệt nhưng dễ chỉnh) -->
+<div class="group group8">
+  <img src="8/cat-8.png" class="cat-8" alt="Cat 8" />
+  <img src="8/black.png" class="black-8" alt="Black Layer" />
+</div>
+
+<!-- Group: Cat Head + Eyeballs + Under Eyes -->
+<div class="group group-cat-eyes">
+  
+  <img src="Cat/head.png" class="cat-head" alt="Cat Head" />
+
+  <!-- Mắt trái -->
+  <div class="eyeball-wrapper left-eye-wrapper">
+    <img src="Cat/left-eyeball.png" class="eyeball left-eye" alt="Left Eye" />
+  </div>
+
+  <!-- Mắt phải -->
+  <div class="eyeball-wrapper right-eye-wrapper">
+    <img src="Cat/right-eyeball.png" class="eyeball right-eye" alt="Right Eye" />
+  </div>
+
+  <img src="Cat/under-eyes.png" class="cat-under-eyes" alt="Cat Under Eyes" />
+</div>
+
+<div class="popup" id="welcome-popup">
+  <div class="popup-box">
+    <p class="popup-text">Welcome to my soft interactive space~</p>
+    <p class="popup-subtext">Try exploring around ✨</p>
+    <div class="cursor-gallery">
+  <div class="cursor-item">
+    <img src="cruisor-click.png" alt="click" />
+    <p>🖱️ A soft tap to see the magic...</p>
+  </div>
+  <div class="cursor-item">
+    <img src="cruisor-hover.png" alt="hover" />
+    <p>🐾 Your hand for petting the quiet moments.</p>
+  </div>
+  <div class="cursor-item">
+    <img src="cruisor-light.png" alt="light" />
+    <p>💡 A little glow to guide your way~</p>
+  </div>
+  <div class="cursor-item">
+    <img src="cruisor.png" alt="default" />
+    <p>😶 Just me, vibing here.</p>
+  </div>
+</div>
+
+    <button id="music-btn">✨ Let’s begin with sound</button>
+  </div>
+</div>
+<div class="floating-music-widget">
+  <button id="music-toggle">🎵</button>
+  <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.6" />
+</div>
+
+<div class="poem-section" id="poem-part2">
+  <p class="poem-line-1">I’d curl beside you where you sat.</p>
+
+<div class="poem-line-2-wrapper">
+  <span class="poem-line-2a variable-weight">NO WORDS TO SAY,</span>
+  <span class="poem-line-2b variable-weight">NO NAME TO CALL</span>
+</div>
+
+  <p class="poem-line-3">Just warmth between us—soft and small.</p>
+
+  <div class="poem-line-4-wrapper">
+    <span class="poem-line-4a">Just stay beside</span>
+    <span class="poem-line-4b">where you might need.</span>
+  </div>
+
+  <p class="poem-line-5">Though silence wraps the things you feel,</p>
+  <p class="poem-line-6">I’d sense the parts you never reveal.</p>
+</div>
+
+<div class="poem-section" id="poem-part3">
+  <p class="poem-line-7">I’d brush against your tired hand,</p>
+  <p class="poem-line-8">Not hoping you'd quite understand.</p>
+  <p class="poem-line-9">Just let me stay—a quiet guest,</p>
+  <p class="poem-line-10">Curled gently where your heartbeat rests.</p>
+</div>
+
+<div class="poem-section" id="poem-part4">
+  <p class="poem-line-11">Not love that shouts, but something true—</p>
+  <p class="poem-line-12">A silent cat, at peace with you.</p>
+  <p class="poem-line-13">Some love speaks without a word</p>
+</div>
+
+<script>
+function animateLine(selector, delayOffset = 0) {
+  const el = document.querySelector(selector);
+  if (!el || el.dataset.animated === "true") return;
+
+  const text = el.textContent;
+  el.textContent = "";
+
+  // Tạo một wrapper để giữ nguyên layout ban đầu
+  const wrapper = document.createElement("span");
+  wrapper.classList.add("line-inner-wrapper");
+  el.appendChild(wrapper);
+
+  [...text].forEach((char, i) => {
+    if (char === " ") {
+      wrapper.appendChild(document.createTextNode(" "));
+    } else {
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.classList.add("fade-char");
+      span.style.animationDelay = `${(i * 0.06 + delayOffset).toFixed(2)}s`;
+      wrapper.appendChild(span);
+    }
+  });
+
+  el.dataset.animated = "true";
+}
+
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const typeInTargets = [
+      { selector: ".poem-line-1", delay: 0 },
+      { selector: ".poem-line-2a", delay: 0.5 },
+      { selector: ".poem-line-2b", delay: 1.2 },
+      { selector: ".poem-line-3", delay: 1.8 },
+      { selector: ".poem-line-7", delay: 1.5 },
+      { selector: ".poem-line-8", delay: 1.0 },
+      { selector: ".poem-line-9", delay: 2.0 },
+      { selector: ".poem-line-10", delay: 4.0 },
+      { selector: ".poem-line-11", delay: 3.1 },
+      { selector: ".poem-line-12", delay: 3.8 },
+      { selector: ".poem-line-13", delay: 6.5 },
+    ];
+
+    const allLines = typeInTargets.map(t => document.querySelector(t.selector)).filter(Boolean);
+
+    // Thêm class fade ban đầu
+    allLines.forEach(line => line.classList.add("fade-up-down"));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+
+          // Tìm đúng delay để animate dòng đó
+          const found = typeInTargets.find(t => entry.target.matches(t.selector));
+          if (found) animateLine(found.selector, found.delay);
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, {
+      threshold: 0.3,
+    });
+
+    allLines.forEach(line => observer.observe(line));
+  });
+</script>
+
+<audio id="ting-sound" src="sounds/click sound.mp3" preload="auto"></audio>
+
+<audio id="meow-sound" src="sounds/meow.mp3" preload="auto"></audio>
+
+ <audio id="bg-music" src="sounds/bg music.mp3" loop></audio> 
+
+
+<a href="#" class="clickable"></a>
+
+  <div id="trail-container"></div>
+<div id="cursor-light"></div>
+
+
+<div class="cat-line" id="cat-line"></div>
+
+<div class="final-line" id="final-line"></div>
+
+</div>
+<div class="glow-follow" id="glow-follow"></div>
+
+
+
+
+</section>
+
+<audio id="purr-audio" src="sounds/cat purring.wav"></audio>
+
+
+
+<script>
+  const poem = document.querySelector('.intro-text');
+  const bg = document.querySelector('.bg-story');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    // Chữ trôi xuống + mờ dần khi scroll
+    if (scrollY > 100) {
+      poem.style.opacity = '0';
+      poem.style.transform = 'translate(-50%, -40%)'; // trôi xuống
+    } else {
+      poem.style.opacity = '1';
+      poem.style.transform = 'translate(-50%, -50%)'; // trở lại giữa
+    }
+
+    // Parallax BG
+
+  });
+</script>
+
+<script>
+  const paws = [
+    document.querySelector('.paw4'),
+    document.querySelector('.paw3'),
+    document.querySelector('.paw2'),
+    document.querySelector('.paw1')
+  ];
+
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    // Nếu scroll lên gần đầu trang
+    if (currentScroll < 80 && lastScrollY > currentScroll) {
+      paws.forEach((paw, i) => {
+        setTimeout(() => {
+          paw.classList.remove('active-bounce'); // reset lại nếu có sẵn
+          void paw.offsetWidth; // trigger reflow
+          paw.classList.add('active-bounce');
+        }, i * 100); // delay từng bước
+      });
+    }
+
+    lastScrollY = currentScroll;
+  });
+const colorStart = [255, 255, 255];    // trắng
+const colorMiddle = [42, 23, 19];      // nâu như ảnh
+const colorEnd = [0, 0, 0];            // đen
+
+function interpolateColor(color1, color2, factor) {
+  return color1.map((start, i) =>
+    Math.round(start + (color2[i] - start) * factor)
+  );
+}
+
+function rgbArrayToString(rgb) {
+  return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+}
+
+window.addEventListener("scroll", () => {
+  const section = document.querySelector(".section2");
+  const rect = section.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // Tính phần trăm scroll trong section2
+  let scrollProgress = 1 - rect.bottom / (windowHeight + rect.height);
+  scrollProgress = Math.min(Math.max(scrollProgress, 0), 1); // giới hạn 0–1
+
+  let bgColor;
+
+if (scrollProgress < 0.45) {
+  // 0–45%: trắng → nâu
+  const p = scrollProgress / 0.45;
+  bgColor = interpolateColor(colorStart, colorMiddle, p);
+} else if (scrollProgress < 0.6) {
+  // 45–60%: giữ nâu
+  bgColor = colorMiddle;
+} else {
+  // 60–100%: nâu → đen
+  const p = (scrollProgress - 0.6) / 0.4;
+  bgColor = interpolateColor(colorMiddle, colorEnd, p);
+}
+
+  document.body.style.backgroundColor = rgbArrayToString(bgColor);
+
+
+const cat = document.querySelector('.cat-1');
+if (cat) {
+  const scrollY = window.scrollY;
+
+  const fadeInStart = 500;
+  const fadeInEnd = 700;     // ✨ rõ nhất ở đây
+  const fadeOutStart = 850;
+  const fadeOutEnd = 1500;
+
+  let opacity = 0;
+  let translateX = -50; // default là ở giữa
+
+  if (scrollY < fadeInStart) {
+    opacity = 0;
+    translateX = -70; // trôi lệch sang trái
+  } else if (scrollY >= fadeInStart && scrollY <= fadeInEnd) {
+    const progress = (scrollY - fadeInStart) / (fadeInEnd - fadeInStart);
+    opacity = 0.3 + 0.7 * progress;
+    translateX = -70 + 20 * progress; // -70 ➝ -50 (vào giữa)
+  } else if (scrollY > fadeInEnd && scrollY <= fadeOutStart) {
+    opacity = 1;
+    translateX = -50;
+  } else if (scrollY > fadeOutStart && scrollY <= fadeOutEnd) {
+    const progress = (scrollY - fadeOutStart) / (fadeOutEnd - fadeOutStart);
+    opacity = 1 - progress;
+    translateX = -50 - 20 * progress; // -50 ➝ -70 (trôi ngược lại trái)
+  } else {
+    opacity = 0;
+    translateX = -70;
+  }
+
+  cat.style.opacity = opacity;
+  cat.style.transform = `translateX(${translateX}%)`;
+}
+
+});
+
+
+
+
+</script>
+
+<script>
+  function showTextOnHover(triggerSelector, ...textSelectors) {
+    const trigger = document.querySelector(triggerSelector);
+    const texts = textSelectors.map(sel => document.querySelector(sel));
+    
+    if (!trigger || texts.some(t => !t)) return;
+
+    let timeoutId;
+
+    trigger.addEventListener('mouseenter', () => {
+      texts.forEach(t => t.classList.add('show'));
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        texts.forEach(t => t.classList.remove('show'));
+      }, 5000);
+    });
+  }
+
+  // Book 1 → hiện text 1
+  showTextOnHover('.group1 .book', '.group1 .text');
+
+  // Book 2 → hiện cả book-text + paper-text
+  showTextOnHover('.group2 .book', '.group2 .book-text', '.group2 .paper-text');
+</script>
+
+<script>
+  const paper = document.querySelector('.group2 .paper');
+  const paperText = document.querySelector('.group2 .paper-text');
+
+  let timeoutId;
+
+  if (paper && paperText) {
+    paper.addEventListener('mouseenter', () => {
+      paperText.style.opacity = '1';
+
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        paperText.style.opacity = '0';
+      }, 5000);
+    });
+
+    // nếu rời chuột thì cũng có thể tắt text ngay (tuỳ ý)
+    paper.addEventListener('mouseleave', () => {
+      timeoutId = setTimeout(() => {
+        paperText.style.opacity = '0';
+      }, 5000);
+    });
+  }
+</script>
+
+<script>
+  const shadow = document.querySelector('.group-shadow .shadow');
+  const shadowGroup = document.querySelector('.group-shadow');
+
+  shadowGroup.addEventListener('mousemove', (e) => {
+    const rect = shadowGroup.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const dx = e.clientX - centerX;
+    const dy = e.clientY - centerY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    const maxDistance = Math.max(rect.width, rect.height) / 2;
+    const clamped = Math.min(distance, maxDistance);
+    const percent = clamped / maxDistance;
+
+    const minOpacity = 0.2;
+    const maxOpacity = 0.7;
+    const opacity = maxOpacity - (maxOpacity - minOpacity) * (1 - percent);
+
+    shadow.style.opacity = opacity.toFixed(2);
+  });
+
+  shadowGroup.addEventListener('mouseleave', () => {
+    shadow.style.opacity = '0.7';
+  });
+</script>
+<script>
+const headGroup = document.querySelector('.head-group');
+const allHeads = headGroup.querySelectorAll('.head');
+const frontHead = headGroup.querySelector('.head-front');
+
+let headResetTimeout;
+
+function showHead(targetClass) {
+  // Clear timeout cũ nếu có
+  clearTimeout(headResetTimeout);
+
+  // Ẩn tất cả đầu (bao gồm cả head-front)
+  allHeads.forEach(head => head.classList.remove('show'));
+
+  // Hiện đầu mục tiêu
+  const targetHead = headGroup.querySelector(`.${targetClass}`);
+  if (targetHead) {
+    targetHead.classList.add('show');
+
+    // Sau 1.5s → hiện lại head front
+    headResetTimeout = setTimeout(() => {
+      targetHead.classList.remove('show');
+      frontHead.classList.add('show');
+    }, 1500); // chỉnh thời gian tại đây
+  }
+}
+
+// Gán sự kiện cho từng trigger
+document.querySelector('.trigger-left-up').addEventListener('click', () => {
+  showHead('head-left-up');
+});
+document.querySelector('.trigger-left-down').addEventListener('click', () => {
+  showHead('head-left-down');
+});
+document.querySelector('.trigger-right-up').addEventListener('click', () => {
+  showHead('head-right-up');
+});
+document.querySelector('.trigger-right-down').addEventListener('click', () => {
+  showHead('head-right-down');
+});
+
+// Hiển thị đầu front ban đầu
+window.addEventListener('DOMContentLoaded', () => {
+  frontHead.classList.add('show');
+});
+
+
+</script>
+
+<script>
+  const triggers = document.querySelectorAll('.head-trigger');
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', function (e) {
+      const ripple = document.createElement('div');
+      ripple.classList.add('ripple');
+
+      const rect = trigger.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+
+      trigger.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600); // khớp với thời gian animation
+    });
+  });
+  function createRipple(x, y, parent) {
+  ['small', 'medium', 'large'].forEach((size, i) => {
+    const ripple = document.createElement('div');
+    ripple.classList.add('ripple', `ripple-${size}`);
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    ripple.style.animationDelay = `${i * 0.1}s`; // delay từng cái
+    parent.appendChild(ripple);
+
+    // Remove sau khi animation xong
+    setTimeout(() => ripple.remove(), 1000);
+  });
+}
+
+// Ví dụ: click trong vùng
+document.querySelector('.trigger-zone').addEventListener('click', (e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  createRipple(x, y, e.currentTarget);
+});
+
+</script>
+<script>
+  const hand = document.querySelector('.group-cat6 .hand-6');
+  const particleContainer = document.querySelector('.group-cat6 .cat-particles');
+
+  hand.addEventListener('mouseenter', () => {
+    for (let i = 0; i < 10; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('particle');
+
+      // random hướng
+      const angle = Math.random() * 2 * Math.PI;
+      const distance = 30 + Math.random() * 20;
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance;
+
+      dot.style.setProperty('--x', `${x}px`);
+      dot.style.setProperty('--y', `${y}px`);
+
+      particleContainer.appendChild(dot);
+
+      // xoá sau khi xong animation
+      setTimeout(() => {
+        dot.remove();
+      }, 1000);
+    }
+  });
+</script>
+
+<script>
+  const table = document.querySelector(".table-7");
+  const boyWrapper = document.querySelector(".boy-wrapper");
+  const boyShadow = document.querySelector(".boy-shadow-img");
+  const catWalk = document.querySelector(".cat-walk-7");
+  const catLying = document.querySelector(".cat-lying-7");
+  const purrWaves = document.querySelector('.purr-waves');
+  const purrAudio = document.getElementById('purr-audio');
+
+  let hasShownShadow = false;
+
+  // Phát âm thanh purring với fade in/out
+  function playPurring() {
+    purrAudio.pause();
+    purrAudio.currentTime = 0;
+    purrAudio.volume = 0;
+    purrAudio.play();
+
+    // Fade in
+    let volume = 0;
+    const fadeIn = setInterval(() => {
+      if (volume < 1) {
+        volume += 0.05;
+        purrAudio.volume = Math.min(volume, 1);
+      } else {
+        clearInterval(fadeIn);
+      }
+    }, 50);
+
+    // Fade out sau 5s
+    setTimeout(() => {
+      let volumeOut = 1;
+      const fadeOut = setInterval(() => {
+        if (volumeOut > 0) {
+          volumeOut -= 0.05;
+          purrAudio.volume = Math.max(volumeOut, 0);
+        } else {
+          clearInterval(fadeOut);
+          purrAudio.pause();
+        }
+      }, 50);
+    }, 5000);
+  }
+
+  // Bấm vào bàn
+  table.addEventListener("click", () => {
+    boyWrapper.style.transform = "translateX(0)";
+    boyWrapper.style.opacity = "1";
+
+    if (!hasShownShadow) {
+      boyShadow.style.opacity = "1";
+      boyShadow.style.pointerEvents = "auto";
+      hasShownShadow = true;
+    }
+  });
+
+  // Bấm vào bóng
+  boyShadow.addEventListener("click", () => {
+    boyShadow.style.opacity = "0";
+    boyShadow.style.pointerEvents = "none";
+
+    catWalk.classList.add("hide");
+    catLying.classList.add("show");
+
+    // ⏱️ 1 giây sau mới phát sóng + âm thanh
+    setTimeout(() => {
+      purrWaves.classList.add("show");
+      playPurring();
+    }, 1000);
+  });
+
+  // Bấm vào mèo nằm → phát lại purring
+  catLying.addEventListener("click", () => {
+    playPurring();
+  });
+
+  // Scroll để hiện cat-walk
+  function handleScroll() {
+    const triggerY = 5740;
+    const currentY = window.scrollY + window.innerHeight;
+
+    if (currentY >= triggerY) {
+      catWalk.classList.add("appear");
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+</script>
+
+
+<script>
+  const finalLine = document.getElementById("final-line");
+  const poemText = "And maybe when your thoughts drift far,\nYou’d find me where your soft spots are.";
+  let hasTyped = false;
+
+  window.addEventListener("scroll", () => {
+    const rect = finalLine.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (!hasTyped && rect.top < windowHeight - 100) {
+      hasTyped = true;
+
+[...poemText].forEach((char, i) => {
+  if (char === "\n") {
+    finalLine.appendChild(document.createElement("br"));
+  } else if (char === " ") {
+    const space = document.createTextNode(" ");
+    finalLine.appendChild(space);
+  } else {
+    const span = document.createElement("span");
+    span.classList.add("fade-char");
+    span.textContent = char;
+    span.style.animationDelay = `${i * 0.06}s`;
+    finalLine.appendChild(span);
+  }
+});
+
+    }
+  });
+</script>
+
+<script>
+const black8 = document.querySelector('.black-8');
+
+black8.addEventListener('mousemove', (e) => {
+  const rect = black8.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const percentX = (x / rect.width) * 100 + '%';
+  const percentY = (y / rect.height) * 100 + '%';
+
+  black8.style.setProperty('--x', percentX);
+  black8.style.setProperty('--y', percentY);
+});
+
+black8.addEventListener('mouseleave', () => {
+  // Move ra ngoài màn hình để "che lại toàn bộ"
+  black8.style.setProperty('--x', '-100%');
+  black8.style.setProperty('--y', '-100%');
+});
+
+const glow = document.getElementById("glow-follow");
+const blackLayer = document.querySelector(".black-8");
+
+// Ban đầu ẩn glow
+glow.style.display = "none";
+
+// Khi chuột vào black layer
+blackLayer.addEventListener("mouseenter", () => {
+  glow.style.display = "block";
+});
+
+// Khi chuột rời khỏi black layer
+blackLayer.addEventListener("mouseleave", () => {
+  glow.style.display = "none";
+});
+
+// Di chuyển theo chuột (chỉ khi glow đang hiển thị)
+document.addEventListener("mousemove", (e) => {
+  if (glow.style.display === "block") {
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+  }
+});
+
+black8.addEventListener("click", (e) => {
+  const rect = black8.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const percentX = (x / rect.width) * 100 + "%";
+  const percentY = (y / rect.height) * 100 + "%";
+
+  black8.style.setProperty("--x", percentX);
+  black8.style.setProperty("--y", percentY);
+
+  black8.style.clipPath = `circle(0% at ${percentX} ${percentY})`;
+  void black8.offsetWidth;
+  black8.style.clipPath = `circle(150% at ${percentX} ${percentY})`;
+
+  // 🩵 Biến mất final line (nếu có)
+  const finalLine = document.querySelector(".final-line");
+  if (finalLine) {
+    finalLine.style.opacity = "0";
+  }
+
+  // 💖 Hiện thơ
+  const poemLine11 = document.querySelector(".poem-line-11");
+  const poemLine12 = document.querySelector(".poem-line-12");
+
+  poemLine11.classList.add("show-lines");
+  poemLine12.classList.add("show-lines");
+
+  // 🔥 Ẩn black layer sau hiệu ứng
+  setTimeout(() => {
+    black8.style.opacity = "0";
+    black8.style.pointerEvents = "none";
+  }, 1000);
+});
+
+const fadeLayer = document.createElement("div");
+fadeLayer.classList.add("fade-glow");
+document.body.appendChild(fadeLayer);
+
+// remove sau khi xong animation
+setTimeout(() => fadeLayer.remove(), 1500);
+
+
+
+
+</script>
+
+<script>
+  const catEyesGroup = document.querySelector('.group-cat-eyes');
+  const meowSound = document.getElementById('meow-sound');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          catEyesGroup.classList.add('show');
+
+          // 🐾 Play meow sound
+          if (meowSound) {
+            meowSound.currentTime = 0; // reset để luôn bắt đầu lại
+            meowSound.play().catch(e => {
+              console.log('⚠️ Sound blocked until user interacts with page:', e);
+            });
+          }
+        }, 600);
+
+        observer.unobserve(catEyesGroup); // chỉ chạy 1 lần
+      }
+    });
+  }, {
+    threshold: 0.9
+  });
+
+  observer.observe(catEyesGroup);
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const catEyesGroup = document.querySelector(".group-cat-eyes");
+    const line4a = document.querySelector(".poem-line-4a");
+    const line4b = document.querySelector(".poem-line-4b");
+
+    catEyesGroup.addEventListener("click", () => {
+      line4a.classList.add("show-lines");
+      line4b.classList.add("show-lines");
+    });
+  });
+</script>
+
+<script>
+const eyeball = document.querySelector(".cat-eyeballs");
+const wrapper = document.querySelector(".eyeball-wrapper");
+
+document.addEventListener("mousemove", (e) => {
+  const rect = wrapper.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  const dx = e.clientX - centerX;
+  const dy = e.clientY - centerY;
+
+  const angle = Math.atan2(dy, dx);
+  const maxMove = 1000; // 👈 bán kính giới hạn di chuyển
+  const moveX = Math.cos(angle) * Math.min(maxMove, Math.abs(dx));
+  const moveY = Math.sin(angle) * Math.min(maxMove, Math.abs(dy));
+
+  eyeball.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
+
+document.addEventListener("mouseleave", () => {
+  eyeball.style.transform = "translate(0, 0)";
+});
+
+</script>
+
+<script>
+  const leftEye = document.querySelector('.left-eye');
+  const rightEye = document.querySelector('.right-eye');
+
+  const moveEye = (eye, wrapper, e) => {
+    const rect = wrapper.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const dx = e.clientX - centerX;
+    const dy = e.clientY - centerY;
+
+    const distance = Math.min(Math.sqrt(dx * dx + dy * dy), 25); // Giới hạn 10px
+    const angle = Math.atan2(dy, dx);
+
+    const x = Math.cos(angle) * distance;
+    const y = Math.sin(angle) * distance;
+
+    eye.style.transform = `translate(${x}px, ${y}px)`;
+  };
+
+  document.addEventListener('mousemove', (e) => {
+    moveEye(leftEye, document.querySelector('.left-eye-wrapper'), e);
+    moveEye(rightEye, document.querySelector('.right-eye-wrapper'), e);
+  });
+</script>
+
+<script>
+  const catLineDiv = document.getElementById("cat-line");
+  const catLineText = "I’d blink and purr, not beg or plead,(click)";
+  let hasTypedCatLine = false;
+
+  const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasTypedCatLine) {
+        hasTypedCatLine = true;
+
+        // Gõ từng ký tự dòng thơ
+        [...catLineText].forEach((char, i) => {
+          if (char === " ") {
+            const space = document.createTextNode(" ");
+            catLineDiv.appendChild(space);
+          } else {
+            const span = document.createElement("span");
+            span.classList.add("fade-char");
+            span.textContent = char;
+            span.style.animationDelay = `${i * 0.06}s`;
+            catLineDiv.appendChild(span);
+          }
+        });
+
+        observer2.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.8
+  });
+
+  // 👇 Đảm bảo phần tử đã tồn tại rồi mới observe
+  const groupEyes = document.querySelector('.group-cat-eyes');
+  if (groupEyes) observer2.observe(groupEyes);
+</script>
+<script>
+  const groupCatEyes = document.querySelector(".group-cat-eyes");
+  const catLine = document.getElementById("cat-line");
+
+  if (groupCatEyes && catLine) {
+    groupCatEyes.addEventListener("click", () => {
+      groupCatEyes.style.transition = "opacity 1s ease";
+      catLine.style.transition = "opacity 1s ease";
+
+      groupCatEyes.style.opacity = "0";
+      catLine.style.opacity = "0";
+
+      // Tắt pointer-events sau fade out nếu muốn ẩn luôn
+      setTimeout(() => {
+        groupCatEyes.style.pointerEvents = "none";
+        catLine.style.pointerEvents = "none";
+      }, 1000);
+    });
+  }
+
+
+// Sau khi bounce xong (~800ms) → xóa class bounce để không cản fade-out
+setTimeout(() => {
+  catEyesGroup.classList.remove('bounce');
+}, 800);
+
+</script>
+
+
+<script>
+  const trailContainer = document.getElementById("trail-container");
+  const cursorLight = document.getElementById("cursor-light");
+
+  document.addEventListener("mousemove", (e) => {
+    // Luôn update vị trí cursor-light
+    cursorLight.style.left = e.clientX + "px";
+    cursorLight.style.top = e.clientY + "px";
+
+    // 👉 Nếu đang bật light-mode (đèn vàng glowing) → không vẽ trail
+    if (cursorLight.classList.contains("light-mode")) return;
+
+    // 👉 Còn lại thì vẫn tạo dot trail
+    const dot = document.createElement("div");
+    dot.classList.add("trail-dot");
+    dot.style.left = e.clientX + "px";
+    dot.style.top = e.clientY + "px";
+    trailContainer.appendChild(dot);
+
+    setTimeout(() => {
+      dot.remove();
+    }, 500);
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cat8 = document.querySelector(".cat-8");
+  const poem13 = document.querySelector(".poem-line-13");
+
+  // Lưu lại nội dung gốc để reset sau này
+  poem13.dataset.originalText = poem13.textContent;
+
+  cat8.addEventListener("click", function () {
+    cat8.classList.toggle("clicked");
+
+    if (cat8.classList.contains("clicked")) {
+      // 👉 Hiện thơ
+      poem13.style.display = "block";
+      setTimeout(() => {
+        poem13.classList.remove("hide-line");
+        poem13.classList.add("show-line");
+        animateLine(".poem-line-13", 1); // ⏱ chữ hiện nhanh hơn
+      }, 10);
+    } else {
+      // 👉 Ẩn thơ từ từ (fade-out)
+      poem13.classList.remove("show-line");
+      poem13.classList.add("hide-line");
+
+      // Ẩn hẳn sau khi đã fade-out xong
+      setTimeout(() => {
+        poem13.style.display = "none";
+
+        // 💥 Reset lại text để hiện lại được
+        poem13.textContent = poem13.dataset.originalText;
+        poem13.dataset.animated = "false";
+      }, 500);
+    }
+  });
+});
+</script>
+
+<script>
+const musicBtn = document.getElementById("music-btn");
+const popup = document.getElementById("welcome-popup");
+const bgMusic = document.getElementById("bg-music");
+const musicWidget = document.getElementById("music-widget");
+
+musicBtn.addEventListener("click", () => {
+  bgMusic.volume = 0.6;
+  bgMusic.play();
+
+  // Fade out popup
+  popup.classList.add("fade-out");
+
+  // Sau khi popup biến mất → hiện widget âm nhạc
+  setTimeout(() => {
+    popup.style.display = "none";
+    musicWidget.classList.add("show"); // 👉 fade in widget
+  }, 600);
+});
+
+
+</script>
+<script>
+const tingSound = document.getElementById("ting-sound");
+
+document.addEventListener("click", (e) => {
+  // 🎯 Loại trừ những thứ không nên phát (nếu muốn)
+  const tag = e.target.tagName.toLowerCase();
+  const noSoundTags = ["audio", "video", "script"];
+  if (noSoundTags.includes(tag)) return;
+
+  // 📣 Phát ting~
+  tingSound.currentTime = 0;
+  tingSound.play().catch((err) => {
+    console.warn("🔇 Ting bị chặn tới khi có tương tác đầu:", err);
+  });
+});
+
+
+</script>
+<script>
+const bgMusicControl = document.getElementById('bg-music');
+const toggleBtn = document.getElementById('music-toggle');
+const volumeSlider = document.getElementById('volume-slider');
+
+let isPlaying = true;
+
+toggleBtn.addEventListener('click', () => {
+  if (isPlaying) {
+    bgMusicControl.pause();
+    toggleBtn.textContent = '🔇';
+  } else {
+    bgMusicControl.play();
+    toggleBtn.textContent = '🎵';
+  }
+  isPlaying = !isPlaying;
+});
+
+volumeSlider.addEventListener('input', () => {
+  bgMusicControl.volume = volumeSlider.value;
+});
+
+
+</script>
+
+
+</body>
+</html>

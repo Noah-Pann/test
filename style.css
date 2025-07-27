@@ -1,0 +1,2084 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto; /* Cho scroll ngang nếu màn nhỏ */
+  width: 1440px;     /* Cố định toàn bộ trang */
+}
+
+.fixed-wrapper {
+  width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff; /* màu đầu tiên */
+  transition: background-color 0.3s ease;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+
+.footsteps {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Điều chỉnh cao tùy bạn */
+}
+
+.paw {
+  position: absolute;
+  width: 60px;
+  opacity: 1; /* <- đảm bảo luôn hiện sau khi hiện ra */
+  transform: scale(1);
+  animation: pawFade 0.6s ease forwards;
+}
+
+
+.paw1 {
+  top: 100px;
+  right: 200px;
+  animation-delay: 0.2s;
+}
+.paw2 {
+  top: 230px;
+  right: 95px;
+  animation-delay: 0.6s;
+}
+.paw3 {
+  top: 390px;
+  right: 190px;
+  animation-delay: 1s;
+}
+.paw4 {
+  top: 550px;
+  right: 85px;
+  animation-delay: 1.4s;
+}
+
+@keyframes pawFade {
+  0% {
+    opacity: 0;
+    transform: scale(1.4) translateY(20px); /* to hơn và hơi nổi lên */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0); /* thu về lại vị trí */
+  }
+}
+
+
+.fade-char {
+  opacity: 0;
+  animation: fadeInChar 0.3s ease forwards;
+}
+
+@keyframes fadeInChar {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.section2 {
+  height:7000px; /* hoặc đúng chiều cao của bg bạn */
+  position: relative;
+  overflow: hidden;
+}
+
+
+.bg-story {
+  width: 1100px; /*giảm 340px */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+.fade-char {
+  opacity: 0;
+  animation: fadeInChar 0.3s ease forwards;
+}
+
+@keyframes fadeInChar {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pawBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15); /* nảy vừa phải */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.paw.active-bounce {
+  animation: pawBounce 0.4s ease;
+}
+.cat-1 {
+  position: absolute;
+  top: 780px; /* chỉnh cho đúng vị trí trên ảnh bg */
+  left: 34%;
+  transform: translateX(-50%);
+  width: 500px; /* chỉnh size nếu cần */
+  z-index: 5;
+  opacity: 0.5;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+@keyframes shake {
+  0% { transform: translate(-50%, 0); }
+  25% { transform: translate(-50%, -2px); }
+  50% { transform: translate(-50%, 2px); }
+  75% { transform: translate(-50%, -2px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+.cat-1:hover {
+  animation: shake 0.3s ease infinite;
+}
+
+.group1 {  
+  width: 50px;
+  transform: translateX(-50%) scale(0.6);  
+  transform-origin: top left;
+  position: absolute;
+  top: 1760px;
+  left: 13%;
+  z-index: 10;
+}
+
+.group1 .book {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.group1 .text {
+  position: absolute;
+  top: 25px;
+  left: 95px;
+  z-index: 2; /* Lớn hơn là nằm trên */
+}
+
+.group1 .book,
+.group1 .text {
+
+  position: absolute;
+}
+
+.group2 {
+  width: 60px; /* hoặc tùy kích thước */
+  transform: translateX(-50%) scale(0.58);
+  transform-origin: top left;
+  position: absolute;
+  top: 1685px; /* chỉnh vị trí thủ công */
+  left: 58%;
+  z-index: 20; /* trên bg */
+}
+
+.group2 .book,
+.group2 .paper,
+.group2 .text {
+  position: absolute;
+}
+
+/* Book nằm ở gốc */
+.group2 .book {
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+/* Text nằm trên book */
+.group2 .book-text {
+  top: 80px;
+  left: 255px;
+  z-index: 30;
+}
+
+/* Paper đặt cạnh hoặc đè lên tùy bố cục */
+.group2 .paper {
+  top: 5px;
+  left: 4px;
+  z-index: 2;
+}
+
+/* Text trên paper */
+.group3 {
+  width: 60px; /* chỉnh theo size mong muốn */
+  transform: translateX(-50%) scale(0.75); /* có thể điều chỉnh scale */
+  transform-origin: top left;
+  position: absolute;
+  top: 3100px; /* chỉnh tay để đặt đúng vị trí trên bg */
+  left: 60%;
+  z-index: 20; /* nằm trên background */
+}
+
+.group3 .book {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto; /* Cho scroll ngang nếu màn nhỏ */
+  width: 1440px;     /* Cố định toàn bộ trang */
+}
+
+.fixed-wrapper {
+  width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff; /* màu đầu tiên */
+  transition: background-color 0.3s ease;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+
+.footsteps {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Điều chỉnh cao tùy bạn */
+}
+
+.paw {
+  position: absolute;
+  width: 60px;
+  opacity: 1; /* <- đảm bảo luôn hiện sau khi hiện ra */
+  transform: scale(1);
+  animation: pawFade 0.6s ease forwards;
+}
+
+
+.paw1 {
+  top: 100px;
+  right: 200px;
+  animation-delay: 0.2s;
+}
+.paw2 {
+  top: 230px;
+  right: 95px;
+  animation-delay: 0.6s;
+}
+.paw3 {
+  top: 390px;
+  right: 190px;
+  animation-delay: 1s;
+}
+.paw4 {
+  top: 550px;
+  right: 85px;
+  animation-delay: 1.4s;
+}
+
+@keyframes pawFade {
+  0% {
+    opacity: 0;
+    transform: scale(1.4) translateY(20px); /* to hơn và hơi nổi lên */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0); /* thu về lại vị trí */
+  }
+}
+
+
+.fade-char {
+  opacity: 0;
+  animation: fadeInChar 0.3s ease forwards;
+}
+
+@keyframes fadeInChar {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.section2 {
+  height:7000px; /* hoặc đúng chiều cao của bg bạn */
+  position: relative;
+  overflow: hidden;
+}
+
+
+.bg-story {
+  width: 1100px; /*giảm 340px */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.intro-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  text-align: left;
+  font-size: 1.9rem;
+  color: #5e4636;
+  font-family: 'Georgia', serif;
+  white-space: nowrap;
+  z-index: 10;
+  font-family: 'Caveat', cursive;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-char {
+  opacity: 0;
+  animation: fadeInChar 0.3s ease forwards;
+}
+
+@keyframes fadeInChar {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pawBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15); /* nảy vừa phải */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.paw.active-bounce {
+  animation: pawBounce 0.4s ease;
+}
+.cat-1 {
+  position: absolute;
+  top: 780px; /* chỉnh cho đúng vị trí trên ảnh bg */
+  left: 34%;
+  transform: translateX(-50%);
+  width: 500px; /* chỉnh size nếu cần */
+  z-index: 5;
+  opacity: 0.5;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+@keyframes shake {
+  0% { transform: translate(-50%, 0); }
+  25% { transform: translate(-50%, -2px); }
+  50% { transform: translate(-50%, 2px); }
+  75% { transform: translate(-50%, -2px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+.cat-1:hover {
+  animation: shake 0.3s ease infinite;
+}
+
+.group1 {  
+  width: 50px;
+  transform: translateX(-50%) scale(0.6);  
+  transform-origin: top left;
+  position: absolute;
+  top: 1760px;
+  left: 13%;
+  z-index: 21;
+}
+
+.group1 .book {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.group1 .text {
+  position: absolute;
+  top: 25px;
+  left: 95px;
+  z-index: 2; /* Lớn hơn là nằm trên */
+}
+
+.group1 .book,
+.group1 .text {
+
+  position: absolute;
+}
+
+.group2 {
+  width: 60px; /* hoặc tùy kích thước */
+  transform: translateX(-50%) scale(0.58);
+  transform-origin: top left;
+  position: absolute;
+  top: 1685px; /* chỉnh vị trí thủ công */
+  left: 58%;
+  z-index: 20; /* trên bg */
+}
+
+.group2 .book,
+.group2 .paper,
+.group2 .text {
+  position: absolute;
+}
+
+/* Book nằm ở gốc */
+.group2 .book {
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+/* Text nằm trên book */
+.group2 .book-text {
+  top: 80px;
+  left: 255px;
+  z-index: 4;
+}
+
+/* Paper đặt cạnh hoặc đè lên tùy bố cục */
+.group2 .paper {
+  top: 5px;
+  left: 4px;
+  z-index: 2;
+}
+
+/* Text trên paper */
+/* Mặc định ẩn đi */
+.group2 .paper-text {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  position: absolute;
+  z-index: 10; /* đảm bảo nằm trên các lớp khác */
+}
+
+.group2 .paper-text {
+  top: 50px;
+  left: 100px;
+  width: auto;  /* đảm bảo không bị ẩn do width 0 */
+  height: auto;
+}
+
+.group2 .paper-text {
+  z-index: 9999;
+}
+
+/* Khi hover vào .paper thì hiện .paper-text */
+.group2 .paper:hover + .paper-text {
+  opacity: 1;
+}
+
+
+.group3 {
+  width: 60px; /* chỉnh theo size mong muốn */
+  transform: translateX(-50%) scale(0.60); /* có thể điều chỉnh scale */
+  transform-origin: top left;
+  position: absolute;
+  top: 1550px; /* chỉnh tay để đặt đúng vị trí trên bg */
+  left: 14%;
+  z-index: 19; /* nằm trên background */
+}
+
+.group3 .book {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.group-coffee {
+  width: 60px;
+  transform: translateX(-50%) scale(0.6);
+  transform-origin: top left;
+  position: absolute;
+  top: 1608px;
+  left: 44%;
+  z-index: 20;
+}
+
+.group-coffee .cup,
+.group-coffee .coffee,
+.group-coffee .smoke,
+.group-coffee .coffee-mask {
+  position: absolute;
+}
+
+/* Cup */
+.group-coffee .cup {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Khói */
+.group-coffee .smoke {
+  top: -721px;
+  left: -61px;
+  z-index: 3;
+  opacity: 0.5;
+  pointer-events: none;
+    animation: smokeWave 4s ease-in-out infinite; /* 🌬️ thêm dòng này */
+}
+
+/* Coffee Mask Wrapper */
+.group-coffee .coffee-mask {
+  top: 15px;
+  left: 71px;
+  width: auto;
+  height: auto;
+  z-index: 2;
+  position: absolute;
+  display: inline-block;
+  -webkit-mask-image: url('3/coffee.png');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-image: url('3/coffee.png');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  pointer-events: none;
+}
+
+/* Coffee image */
+.group-coffee .coffee-mask .coffee {
+  z-index: 1;
+  position: relative;
+}
+
+/* Glow effect */
+/* Vẫn giữ coffee-mask như trước (có mask-image) */
+
+/* Vòng sáng lớn */
+.group-coffee .ring-glow {
+  position: absolute;
+  top: 37%;
+  left: 45%;
+  width: 30px;
+  height: 7px;
+  border: 4px solid rgba(43, 15, 8, 0.6);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.7);
+  pointer-events: none;
+  z-index: 3;
+  filter: blur(1px);
+}
+
+/* Vòng nhỏ – riêng biệt */
+.group-coffee .small-ring {
+  position: absolute;
+  top: 37%;
+  left: 45%;
+  width: 30px;
+  height: 7px;
+  border: 5px solid rgba(43, 15, 8, 0.6);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.3);
+  pointer-events: none;
+  z-index: 3;
+  filter: blur(1px);
+}
+
+/* Hover → vòng lớn */
+.group-coffee:hover .ring-glow {
+  animation: ringExpand 0.6s ease-out;
+}
+
+/* Hover → vòng nhỏ */
+.group-coffee:hover .small-ring {
+  animation: ringExpandSmall 1.0s ease-out;
+  animation-delay: 0.2s;
+}
+/* Keyframes */
+@keyframes ringExpand {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(3.7);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(6);
+  }
+}
+
+@keyframes ringExpandSmall {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(4);
+  }
+}
+
+@keyframes smokeWave {
+  0% {
+    transform: translate(0, 0) scale(1) skewX(0deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(-3px, -10px) scale(1.03) skewX(-1deg);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate(2px, -20px) scale(1.06) skewX(1deg);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(-2px, -10px) scale(1.02) skewX(-0.5deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(0, 0) scale(1) skewX(0deg);
+    opacity: 0.5;
+  }
+}
+
+.text {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.text.show {
+  opacity: 1;
+}
+
+.group2 .book-text,
+.group2 .paper-text,
+.group1 .text {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.group2 .book-text.show,
+.group2 .paper-text.show,
+.group1 .text.show {
+  opacity: 1;
+}
+.group-shadow {
+  width: 60px; /* tuỳ chỉnh size tổng thể */
+  transform: translateX(-50%) scale(0.575); /* scale tùy ý */
+  transform-origin: top left;
+  position: absolute;
+  top: 2334px; /* 👉 chỉnh vị trí bằng tay trên bg */
+  left: 81.2%;
+  z-index: 15; /* đè lên bg, dưới các object khác nếu cần */
+}
+
+.group-shadow .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.group-shadow {
+  width: 2000px;  /* tăng tạm để test */
+  height: 1750px;
+
+}
+
+.group-aura {
+  position: absolute;
+  top: 3400px; /* ✨ chỉnh vị trí tùy ý */
+  left: 45%;
+  transform: translateX(-50%) scale(1);
+  transform-origin: top left;
+  z-index: 10; /* nằm dưới text, trên nền */
+  width: 100px;
+  height: 100px;
+}
+
+.aura {
+  width: 400px;
+  height: 400px;
+  background-color: #f47a3a;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(80px);
+  animation: pulseAura 3s ease-in-out infinite;
+}
+
+/* Hiệu ứng nhấp nháy nhẹ nhàng */
+@keyframes pulseAura {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+.group-character {
+  position: absolute;
+  top: 3300px;       /* 👉 chỉnh thủ công */
+  left: 50%;         /* 👉 chỉnh thủ công */
+  transform: translateX(-50%) scale(0.6); /* giữ căn giữa + scale tùy chỉnh */
+  transform-origin: top center;
+  z-index: 25;       /* nằm trên bg và shadow */
+}
+
+/* Ảnh body đứng ở dưới */
+.group-character .body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Nhóm đầu – chứa 5 hướng khác nhau */
+.group-character .head-group {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  z-index: 2;
+}
+
+/* Tất cả các đầu – cùng vị trí, chỉ hiện 1 cái */
+.group-character .head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Mặc định: hiện head-front */
+.group-character .head-front {
+  opacity: 1;
+}
+.head-trigger {
+  position: absolute;
+  width: 770px;       /* 👈 tuỳ chỉnh kích thước */
+  height: 370px;
+  background-color: transparent; /* 👀 màu nhìn rõ (đỏ, chỉnh tuỳ ý) */
+  z-index: 5;         /* dưới character và bg */
+  cursor: pointer;
+}
+
+/* 4 vị trí – bạn điều chỉnh lại thủ công nếu cần */
+.head-trigger {
+  position: absolute;
+  width: 700px;
+  height: 370px;
+  cursor: pointer;
+}
+
+/* ✅ Sửa tại đây: dùng .head-trigger.[class] thay vì chỉ .trigger-[x] */
+.head-trigger.trigger-left-up {
+  top: 3150px;
+  left: 4.9%;
+}
+
+.head-trigger.trigger-left-down {
+  top: 3520px;
+  left: 4.9%;
+}
+
+.head-trigger.trigger-right-up {
+  top: 3150px;
+  left: 53.5%;
+  
+}
+
+.head-trigger.trigger-right-down {
+  top: 3520px;
+  left: 53.5%;
+}
+
+/* Ẩn tất cả đầu mặc định */
+.head {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Hiện đầu nào đang active */
+.head.show {
+  opacity: 1;
+}
+.head-group .head {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.head-group .head.show {
+  display: block;
+}
+
+/* Head góc trái trên */
+.head-left-up {
+  transform: translate(4px, 2px); /* 👈 chỉnh lệch nhẹ trái lên */
+}
+
+/* Head góc trái dưới */
+.head-left-down {
+  transform: translate(6px, 8px);
+}
+
+/* Head góc phải trên */
+.head-right-up {
+  transform: translate(13px, 2px);
+}
+
+/* Head góc phải dưới */
+.head-right-down {
+  transform: translate(6px, 8px);
+}
+
+
+/* Vòng ripple */
+.ripple {
+  position: absolute;
+  border: 2px solid rgb(132, 76, 59);
+  border-radius: 50%;
+  transform: scale(15);
+  animation: ripple-effect 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(1.5px);
+  opacity: 1;
+}
+
+.ripple-small {
+  width: 12px;
+  height: 12px;
+}
+
+.ripple-medium {
+  width: 20px;
+  height: 20px;
+}
+
+.ripple-large {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(30); /* toả ra rộng */
+    opacity: 0;           /* mờ dần */
+  }
+}
+
+.group-character .heart {
+  position: absolute;
+  top: 250px;     /* 👉 chỉnh vị trí dọc */
+  left: 84px;     /* 👉 chỉnh vị trí ngang */
+  width: 30px;    /* 👈 chỉnh size tuỳ ý nếu cần */
+  z-index: 3;     /* nằm trên body, dưới head nếu cần */
+  pointer-events: auto;
+  transform: scale(3);
+  animation: heartbeat-pulse 2s ease-in-out infinite;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.group-character .heart:hover {
+  filter: drop-shadow(0 0 6px rgba(255, 100, 115, 0.6));
+
+  animation: heartbeat-pulse-hover 0.6s ease-in-out infinite;
+}
+
+/* Nhịp đập bình thường */
+@keyframes heartbeat-pulse {
+  0%   { transform: scale(2.75); }
+  10%  { transform: scale(3.5); }
+  20%  { transform: scale(2.75); }
+  30%  { transform: scale(3.5); } /* nhịp thứ 2 */
+  40%  { transform: scale(2.75); }
+  70%  { transform: scale(3.3); } /* nhịp chậm */
+  80%  { transform: scale(2.75); }
+  100% { transform: scale(2.8); }
+}
+
+/* Nhịp đập khi hover (mạnh hơn, nhanh hơn) */
+@keyframes heartbeat-pulse-hover {
+  0%   { transform: scale(2.75); }
+  15%  { transform: scale(3.6); }
+  30%  { transform: scale(2.75); }
+  50%  { transform: scale(3.6); }
+  70%  { transform: scale(2.75); }
+  90%  { transform: scale(3.3); }
+  100% { transform: scale(2.8); }
+}
+
+.group-cat6 {
+  position: absolute;
+  top: 3920px; /* 👉 chỉnh vị trí dọc theo ý bạn */
+  left: 17%;   /* 👉 chỉnh ngang */
+  transform: translateX(-50%) scale(0.6); /* scale nếu cần */
+  transform-origin: top center;
+  z-index: 20; /* nằm trên bg, dưới character nếu muốn */
+}
+
+/* Cat nằm dưới */
+.group-cat6 .cat-6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+/* Hand nằm trên */
+.group-cat6 .hand-6 {
+  position: absolute;
+  top: 470px; /* 👉 bạn chỉnh lệch tùy ý */
+  left: 757px;
+  z-index: 4;
+}
+
+/* 🖐️ Tay di chuyển lên xuống nhịp nhàng khi hover */
+.group-cat6 .hand-6:hover {
+  animation: hand-bob 1s ease-in-out infinite;
+
+}
+
+/* 🐱 Mèo rung nhẹ khi tay hover */
+.group-cat6 .hand-6:hover ~ .cat-6 {
+  animation: cat-shiver 0.25s linear infinite;
+}
+
+/* Keyframes: tay nhấp nhô */
+@keyframes hand-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-70px);
+  }
+}
+
+/* Keyframes: mèo run nhẹ */
+@keyframes cat-shiver {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(1.5px, -1.5px); }
+  50%  { transform: translate(-1.5px, 1.5px); }
+  75%  { transform: translate(1px, -1px); }
+  100% { transform: translate(0px, 0px); }
+}
+.cat-particles {
+  position: absolute;
+  top: 600px;   /* 👈 chỉnh vị trí sau mèo */
+  left: 840px;
+  width: 0;
+  height: 0;
+  z-index: 20; /* sau lưng mèo */
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgb(230, 255, 212);
+  opacity: 0;
+  animation: pop-particle 1s ease-out forwards;
+  filter: blur(1px);
+}
+
+@keyframes pop-particle {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.group-boycat {
+  position: absolute;
+  top: 4840px;      /* 👉 chỉnh tổng vị trí nhóm nếu cần */
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+  transform-origin: top center;
+  z-index: 20;
+}
+
+.group-boycat .table-7 {
+  position: absolute;
+  top: 550px;
+  left: -70px;
+  z-index: 1;
+}
+
+.group-boycat .boy-7 {
+  position: absolute;
+  top: 10px;  /* 👈 chỉnh tay */
+  left: 20px;
+  z-index: 2;
+}
+
+.group-boycat .cat-walk-7 {
+  position: absolute;
+  top: 740px;
+  left: -1095px;
+  z-index: 1;
+}
+
+.group-boycat .cat-lying-7 {
+  position: absolute;
+  top: 930px;
+  left: -240px;
+  z-index: 3;
+}
+
+/* Wrapper để boy di chuyển */
+
+
+.boy-wrapper {
+  position: absolute;
+  top: 130px;
+  left: 180px;
+  width: auto;
+  height: auto;
+  transform: translateX(500px);
+  opacity: 0;
+  z-index: 2;
+  transition: transform 1.2s ease-out, opacity 0.8s ease;
+}
+
+/* Boy: chỉnh cho đúng vị trí mong muốn */
+.boy-7 {
+  position: absolute;  /* ✅ để có thể chỉnh top/left */
+  top: 0;               /* 👈 chỉnh tay để khớp */
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: 2;
+}
+
+
+/* Shadow: lệch thì chỉnh lại tại đây */
+.boy-shadow-img {
+  position: absolute;
+  top: 13px;     /* 👈 chỉnh tay cho khớp */
+  left: 20px;
+  width: auto;
+  opacity: 1;
+  z-index: 3;
+  transition: opacity 0.8s ease;
+  pointer-events: auto;
+}
+
+
+
+.cat-walk-7, .cat-lying-7 {
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 1s ease;
+  pointer-events: none;
+}
+
+/* cat-walk scroll xuất hiện từ trái */
+.cat-walk-7 {
+  transform: translateX(-100px);
+}
+.cat-walk-7.appear {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+.cat-walk-7.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* cat-lying hiện ra từ trên xuống */
+.cat-lying-7 {
+  transform: translateY(-40px);
+}
+.cat-lying-7.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.purr-waves {
+  position: absolute;
+  top: 900px;       /* 👈 cậu cần dời lên chút để cân lại (vì sóng to hơn) */
+  left: 0px;        /* 👈 cũng cần lùi lại để nằm giữa */
+  width: 400px;
+  height: 400px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.purr-waves .wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  background: rgb(216, 245, 255);
+  border-radius: 50%;
+  opacity: 0.2;
+  transform: translate(-50%, -50%) scale(0.5);
+  animation: wavePulse 3s ease-out infinite;
+    filter: blur(2px); /* thêm nhẹ để mượt hơn */
+}
+
+
+.purr-waves .wave:nth-child(2) {
+  animation-delay: 1s;
+}
+.purr-waves .wave:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes wavePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5); /* có thể tăng lên 3 nếu muốn sóng lan xa hơn */
+    opacity: 0;
+  }
+}
+
+
+.purr-waves {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.8s ease, transform 1.2s ease;
+}
+.purr-waves.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.group8 {
+  position: absolute;
+  top: 5600px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.579);  /* 👈 resize toàn nhóm */
+  transform-origin: top center;
+  z-index: 20;
+}
+
+
+/* Mèo 8 */
+.cat-8 {
+  position: absolute;
+  top: 767px;  /* 👈 chỉnh thủ công tuỳ ý */
+  left: -489px;
+  width: auto;
+  height: auto;
+  z-index: 1;
+    transition: filter 1s ease; /* Cho mượt */
+}
+
+.cat-8.clicked {
+  filter: brightness(0);
+}
+
+
+/* Black layer */
+.black-8 {
+  position: absolute;
+  top: 85px;
+  left: -955px;
+  width: auto;
+  height: auto;
+  z-index: 2;
+  opacity: 1;
+  pointer-events: auto;
+
+  --x: 50%;
+  --y: 50%;
+  --r: 160px;
+
+  mask-image: radial-gradient(circle 160px at var(--x) var(--y),
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.4) 40%,
+    black 100%);
+  -webkit-mask-image: radial-gradient(circle 160px at var(--x) var(--y),
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.4) 40%,
+    black 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+
+  /* ✅ GỘP transition lại 1 dòng */
+  transition:
+    clip-path 1s ease-out,
+    opacity 0.6s ease-out 1s,
+    mask-image 0.1s ease-out,
+    -webkit-mask-image 0.1s ease-out;
+}
+
+
+.black-8::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 100px 60px rgba(255, 255, 200, 0.05);
+  animation: softGlow 4s ease-in-out infinite;
+}
+
+@keyframes softGlow {
+  0%, 100% {
+    box-shadow: 0 0 100px 60px rgba(255, 255, 200, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 140px 80px rgba(255, 184, 69, 0.293);
+  }
+}
+.glow-follow {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+  background: radial-gradient(circle, rgba(255,255,150,0.2) 0%, rgba(255,255,0,0) 80%);
+  mix-blend-mode: screen; /* hoặc lighten nếu muốn */
+  animation: softFlicker 3s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes softFlicker {
+  0%, 100% {
+    opacity: 0.4;
+    filter: blur(6px);
+  }
+  50% {
+    opacity: 0.7;
+    filter: blur(8px);
+  }
+}
+.fade-glow {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, rgba(255,200,150,0.2) 0%, rgba(0,0,0,0) 80%);
+  z-index: 5;
+  pointer-events: none;
+  animation: softFade 1.5s ease-out forwards;
+}
+
+@keyframes softFade {
+  0%   { opacity: 0; }
+  30%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.group-cat-eyes {
+  position: absolute;
+  top: 2400px;
+  left: 11%;
+  transform: translateX(-50%) translateY(100px) scale(0.6); /* scale nhỏ + nằm dưới */
+  transform-origin: top center;
+  z-index: 25;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Mỗi phần trong nhóm */
+.cat-head {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: auto;
+  height: auto;
+  z-index: 4;
+}
+
+.eye-wrapper {
+  position: absolute;
+  top: 850px; /* ví dụ thôi, đúng vị trí mắt */
+  left: 455px;
+  width: 100px;  /* vùng mắt trắng */
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.eyeball-wrapper {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.left-eye-wrapper {
+  top: 837px;
+  left: 470px;
+}
+
+.right-eye-wrapper {
+  top: 850px;
+  left: 1143px;
+}
+
+
+.eyeball {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+.cat-under-eyes {
+  position: absolute;
+  top: -600px;
+  left: -400px;
+  width: auto;
+  height: auto;
+  z-index: 2;
+}
+
+
+.group-cat-eyes.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(0.6);
+}
+
+@keyframes bounceUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-20px) scale(0.6);
+  }
+  100% {
+    transform: translateY(0) scale(0.6);
+  }
+}
+
+.group-cat-eyes.bounce {
+  animation: bounceUp 0.8s ease forwards;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+.popup-box {
+  background-color: #fff9f9;
+  padding: 30px 40px;
+  border-radius: 25px;
+  box-shadow: 0 8px 24px rgba(97, 7, 52, 0.1);
+  text-align: center;
+  max-width: 300px;
+  font-family: 'Comic Sans MS', 'Quicksand', cursive;
+}
+
+.popup-text {
+  font-size: 1.1rem;
+  color: #5a4d4d;
+  margin-bottom: 20px;
+}
+
+#music-btn {
+  background-color: #ffe8ef;
+  color: #744c57;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(57, 13, 35, 0.1);
+  transition: all 0.2s ease;
+}
+
+#music-btn:hover {
+  background-color: #ffdce8;
+  transform: scale(1.05);
+}
+/* Thêm animation cho popup */
+.popup.fade-out {
+  animation: fadeOut 0.6s ease forwards;
+}
+
+.popup-subtext {
+  font-size: 0.95rem;
+  color: #8b6e6e;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+
+
+@keyframes fadeOut {    
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.floating-music-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Quicksand', cursive;
+}
+
+#music-toggle {
+  background-color: #fff4f7;
+  color: #744c57;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 137, 53, 0.1);
+  transition: all 0.2s ease;
+}
+
+#music-toggle:hover {
+  background-color: #ffdce8;
+  transform: scale(1.05);
+}
+
+#volume-slider {
+  width: 120px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  accent-color: #d185a9;
+  border-radius: 8px;
+}
+
+/* Hover vào cả widget thì mới hiện slider */
+.floating-music-widget:hover #volume-slider {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cursor-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.cursor-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 110px;
+  font-size: 0.75rem;
+  color: #6c5a5a;
+  font-family: 'Quicksand', cursive;
+  text-align: center;
+}
+
+.cursor-item img {
+  width: 48px;
+  height: auto;
+  margin-bottom: 4px;
+}
+
+
+#cat-line {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+
+
+.cat-line {
+  position: absolute;
+  top: 2440px; /* chỉnh lại tuỳ trang */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.7rem;
+  color: #fbe8dc;
+  white-space: pre-wrap;
+  z-index: 26;
+  font-family: 'Caveat', cursive;
+}
+
+.fade-char {
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+.poem-line-1,
+.poem-line-2,
+.poem-line-3,
+.poem-line-5,
+.poem-line-6,
+.poem-line-4a,
+.poem-line-4b,
+.poem-line-7,
+.poem-line-8,
+.poem-line-9,
+.poem-line-10,
+.poem-line-11,
+.poem-line-12,
+.poem-line-13,
+.poem-line-14 {
+    transform: translateY(-50%);
+  font-size: 2.7rem;
+  color: #fbe8dc;
+  white-space: pre-wrap;
+  z-index: 26;
+  font-family: 'Caveat', cursive;
+  left: 50%;
+}
+  
+.poem-line-1 {
+  position: absolute;
+  top: 1030px;
+  left: 950px;
+  left: 50%;
+}
+.poem-line-2a,
+.poem-line-2b {
+  font-size: 2.7rem;
+  color: #fbe8dc;
+  white-space: pre-wrap;
+  z-index: 26;
+  font-family: 'Caveat', cursive;
+  left: 50%;
+}
+.poem-line-2a {
+  position: absolute;
+  top: 1500px;
+    left: 610px;
+}
+.poem-line-2b {
+  position: absolute;
+  top: 1550px;
+    left: 700px;
+}
+
+.poem-line-3 {
+  position: absolute;
+  top: 1880px;
+  left: 740px;
+}
+.poem-line-4a, .poem-line-4b {
+  font-size: 4.5rem;
+}
+.poem-line-4a {
+  position: absolute;
+  top: 2450px;
+  left: 200px;
+  transform: rotate(-7.8deg);
+  transform-origin: left center;
+}
+.poem-line-4b {
+  position: absolute;
+  top: 2395px;
+  left: 610px;
+    transform: rotate(7deg);
+  transform-origin: left center;
+}
+.poem-line-4a,
+.poem-line-4b {
+  font-size: 4.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease, text-shadow 0.4s ease;
+  cursor: pointer;
+  text-shadow: none;
+  z-index: 15;
+}
+
+/* Hover vào: hiện ngay */
+.poem-line-4a.show-lines,
+.poem-line-4b.show-lines {
+  opacity: 0.3;  /* 👈 trạng thái bình thường, giống cũ */
+  pointer-events: auto;
+}
+
+/* Hover: hiện mạnh hơn + glow */
+.poem-line-4a.show-lines:hover,
+.poem-line-4b.show-lines:hover {
+  opacity: 1;
+  text-shadow: 0 0 10px #fbe8dc, 0 0 20px #fbe8dc80;
+  transition-delay: 0s;
+}
+
+/* Rời chuột: glow từ từ biến mất */
+.poem-line-4a.show-lines:not(:hover),
+.poem-line-4b.show-lines:not(:hover) {
+  transition-delay: 1s;
+}
+
+
+.poem-line-5 {
+  position: absolute;
+  top: 3230px;
+  left: 870px;  
+}
+.poem-line-6 {
+  position: absolute;
+  top: 3650px;
+  left: 170px;  
+}
+@keyframes float-gently {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes soft-glow {
+  0%, 100% {
+    text-shadow: none;
+    opacity: 0.9;
+  }
+  50% {
+    text-shadow: 0 0 10px #ee6cff88;
+    opacity: 1;
+  }
+}
+.poem-line-4a,
+.poem-line-4b {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease, text-shadow 0.4s ease;
+}
+
+
+.poem-line-5 {
+    animation: float-gently 2.5s ease-in-out infinite,
+             soft-glow 3s ease-in-out infinite;
+}
+.poem-line-6 {
+  animation: float-gently 4.5s ease-in-out infinite,
+             soft-glow 5s ease-in-out infinite;
+}
+
+.poem-line-7 {
+  position: absolute;
+  top: 3980px;
+  left: 680px;  
+  
+}
+.poem-line-8 {
+  position: absolute;
+  top: 4930px;
+  left: 300px;  
+}
+.poem-line-9 {
+  position: absolute;
+  top: 5450px;
+  left: 810px;  
+}
+.poem-line-10 {
+  position: absolute;
+  top: 5500px;
+  left: 805px;  
+}
+.bounce-word {
+  display: inline-block;
+  transition: transform 0.25s ease, text-shadow 0.25s ease;
+  cursor: default;
+}
+
+.bounce-word:hover {
+  transform: translateY(-8px) scale(1.05);
+  text-shadow: 0 4px 12px rgba(255, 200, 240, 0.6);
+}
+
+.poem-line-11 {
+  position: absolute;
+  top: 5999px;
+  left: 190px;  
+  transform: rotate(-18.3deg);
+  transform-origin: left center;
+  color: #f7e2d7;
+}
+.poem-line-12 {
+  position: absolute;
+  top: 6050px;
+  left: 190px;  
+  transform: rotate(-18.3deg);
+  transform-origin: left center;
+  color: #f7e2d7;
+}
+@keyframes soft-glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 2px #ffe7dd, 0 0 5px #ffc6b5;
+    opacity: 0.9;
+  }
+  50% {
+    text-shadow: 0 0 8px #ffdfca, 0 0 15px #ffbca0;
+    opacity: 1;
+  }
+}
+
+@keyframes slow-fade-loop {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
+.poem-line-13 {
+  position: absolute;
+  top: 6200px;
+  left: 530px;
+  transform-origin: left center;
+  font-size: 2rem;
+  transform: rotate(-17deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+  visibility: hidden; /* ✅ Dùng visibility thay vì display */
+}
+
+.poem-line-13.show-line {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+
+
+.fade-up-down {
+  opacity: 0;
+
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.fade-up-down.visible {
+  opacity: 1;
+
+}
+
+.fade-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-char.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-char.hidden {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.poem-line {
+  display: block;
+  width: fit-content;
+  white-space: nowrap;
+}
+.poem-line {
+  position: absolute;
+  transform: none;
+  transform-origin: center center;
+  color: #fbe8dc;
+  transition: transform 0.3s ease;
+}
+
+
+
+.poem-line-1,
+.poem-line-2a,
+.poem-line-2b,
+.poem-line-3,
+.poem-line-5,
+.poem-line-6,
+.poem-line-7,
+.poem-line-8,
+.poem-line-9,
+.poem-line-10 {
+  transition: all 0.4s ease;
+  transform-origin: center center;
+  position: absolute;
+  color: #fbe8dc;
+}
+
+
+.poem-line-1:hover,
+.poem-line-2a:hover,
+.poem-line-2b:hover,
+.poem-line-3:hover,
+.poem-line-5:hover,
+.poem-line-6:hover,
+.poem-line-7:hover,
+.poem-line-8:hover,
+.poem-line-9:hover,
+.poem-line-10:hover {
+
+  text-shadow: 0 0 12px #ffd0c888, 0 0 18px #ffc4ad99;
+  opacity: 0.98;
+}
+
+
+.poem-line:hover .line-inner-wrapper {
+  transform: scale(1.1);
+  color: #ffdec6;
+  text-shadow: 0 0 12px #ffd0c888, 0 0 18px #ffc4ad99;
+}
+
+.poem-line-11,
+.poem-line-12 {
+  display: none;         /* ❗ ẩn hoàn toàn khỏi DOM flow */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Khi hiện ra */
+.poem-line-11.show-lines,
+.poem-line-12.show-lines {
+  display: block;        /* ❗ hiện lại */
+  opacity: 1;
+  pointer-events: auto;
+  animation: soft-glow-pulse 4s ease-in-out infinite;
+}
+
+
+
+
+
+
+.final-line {
+  position: absolute;
+  top: 5900px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fbe8dc;
+  font-size: 2.7rem;
+  line-height: 1.8;
+  z-index: 30;
+  font-family: 'Caveat', cursive;
+  transition: opacity 1s ease-in-out;
+}
+
+.final-line span {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeChar 0.4s forwards;
+}
+
+@keyframes fadeChar {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.fade-char {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeInChar 0.4s forwards;
+}
+
+@keyframes fadeInChar {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 💌 Default: máy bay giấy */
+body {
+  cursor: url('cruisor.png') 5 5, auto;
+}
+
+/* 🫶 Hover vào các đối tượng thân mật → tay */
+.cat-1:hover,
+.cat-walk-7,
+.cat-lying-7,
+.cat-head,
+.hand-6:hover,
+.heart:hover {
+  cursor: url('cruisor-hover.png') 5 5, auto;
+}
+
+.table-7:hover,
+.head-trigger,
+.cat-8 {
+  cursor: url('cruisor-click.png') 5 5, auto ;
+}
+
+.boy-shadow-img:hover,
+.group-shadow:hover,
+.group-shadow .shadow:hover,
+.black-8:hover,
+.book:hover {
+cursor: url('cruisor-light.png') 18 24, auto;
+
+}
+
+.group-shadow:hover .shadow,
+.boy-shadow-img:hover {
+  filter: drop-shadow(0 0 8px #ffd966);
+  transition: filter 0.3s ease;
+}
+
+
+#trail-container {
+  position: fixed;
+  top: 20px;
+  left: 0px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.trail-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgb(255, 180, 192);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+
+
+
+@keyframes book {
+  0% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.95; }
+}
+
+.book {
+  animation: breathing 2.8s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
